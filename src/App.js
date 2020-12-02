@@ -13,10 +13,10 @@ import { WidthParams } from "./components/WidthParams";
 import { Nav } from "./components/Nav";
 
 // useQuery hook
-// function useQuery() {
-//   // return new URLSearchParams(useLocation().search);
-//   return new URLSearchParams(window.location.search);
-// }
+function useQuery() {
+  // return new URLSearchParams(useLocation().search);
+  return new URLSearchParams(window.location.search);
+}
 // useQuery hook end
 
 function App() {
@@ -49,21 +49,22 @@ function App() {
 export default App;
 
 const WidthQuery = () => {
-  const [state, setState] = useState([]);
-  // let location = useLocation();
+  const [state, setState] = useState({});
+  let query = useQuery();
 
   useEffect(() => {
-    setState(window.location.search);
-  }, []);
-
-  // let query = useQuery();
+    setState({
+      name: query.get("name"),
+      age: query.get("age"),
+    });
+  }, [query]);
 
   return (
     <>
       <h2>WidthQuery</h2>
       <pre>{JSON.stringify(state, null, 2)}</pre>
-      <h2>{state.name}</h2>
-      <h2>{state.age}</h2>
+      <h2>name: {state.name}</h2>
+      <h2>age: {state.age}</h2>
     </>
   );
 };
