@@ -16,7 +16,10 @@ export const Nav = () => {
         <Link to="/WidthParams/Hello/world">WidthParams/Hello/world</Link>
       </li>
       <li>
-        <Link to="/WidthQuery?name=kasper&age=29">WidthQuery</Link>
+        <Link to="/WidthQuery">WidthQuery</Link>
+      </li>{" "}
+      <li>
+        <Link to="/WidthQuery?name=kasper&age=29">WidthQuery kasper 29 </Link>
       </li>
     </ul>
   );

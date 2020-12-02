@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import "./App.css";
 import {
   BrowserRouter as Router,
@@ -12,9 +13,10 @@ import { WidthParams } from "./components/WidthParams";
 import { Nav } from "./components/Nav";
 
 // useQuery hook
-function useQuery() {
-  return new URLSearchParams(useLocation().search);
-}
+// function useQuery() {
+//   // return new URLSearchParams(useLocation().search);
+//   return new URLSearchParams(window.location.search);
+// }
 // useQuery hook end
 
 function App() {
@@ -47,11 +49,21 @@ function App() {
 export default App;
 
 const WidthQuery = () => {
-  let query = useQuery();
+  const [state, setState] = useState([]);
+  let location = useLocation();
+
+  useEffect(() => {
+    setState(location);
+  }, [location]);
+
+  // let query = useQuery();
+
   return (
     <>
-      <h2>{query.get("name")}</h2>
-      <h2>{query.get("age")}</h2>
+      <h2>WidthQuery</h2>
+      <pre>{JSON.stringify(state, null, 2)}</pre>
+      {/* <h2>{query.get("name")}</h2>
+      <h2>{query.get("age")}</h2> */}
     </>
   );
 };
