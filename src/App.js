@@ -35,7 +35,7 @@ function App() {
           <Route path="/WidthParams/:param1/:param2">
             <WidthParams />
           </Route>
-          <Route path="/WidthQuery">
+          <Route exact path="/WidthQuery">
             <WidthQuery />
           </Route>
         </Switch>
