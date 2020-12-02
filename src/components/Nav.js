@@ -10,16 +10,16 @@ export const Nav = () => {
         <Link to="/about">About</Link>
       </li>
       <li>
-        <Link to="/WidthParam/123">WidthParam/123</Link>
+        <Link to="/WithParam/123">WithParam/123</Link>
       </li>
       <li>
-        <Link to="/WidthParams/Hello/world">WidthParams/Hello/world</Link>
+        <Link to="/WithParams/Hello/world">WithParams/Hello/world</Link>
       </li>
       <li>
-        <Link to="/WidthQuery">WidthQuery</Link>
+        <Link to="/WithQuery">WithQuery</Link>
       </li>{" "}
       <li>
-        <Link to="/WidthQuery?name=kasper&age=29">WidthQuery kasper 29 </Link>
+        <Link to="/WithQuery?name=kasper&age=29">WithQuery kasper 29 </Link>
       </li>
     </ul>
   );

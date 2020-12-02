@@ -1,6 +1,6 @@
 import { useParams } from "react-router-dom";
 
-export const WidthParams = () => {
+export const WithParams = () => {
   let { param1, param2 } = useParams();
   return (
     <>

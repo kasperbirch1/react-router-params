@@ -1,4 +1,3 @@
-import { useEffect, useState } from "react";
 import "./App.css";
 import {
   BrowserRouter as Router,
@@ -8,16 +7,10 @@ import {
 } from "react-router-dom";
 import { Home } from "./components/Home";
 import { About } from "./components/About";
-import { WidthParam } from "./components/WidthParam";
-import { WidthParams } from "./components/WidthParams";
+import { WithParam } from "./components/WithParam";
+import { WithParams } from "./components/WithParams";
 import { Nav } from "./components/Nav";
-
-// useQuery hook
-function useQuery() {
-  // return new URLSearchParams(useLocation().search);
-  return new URLSearchParams(window.location.search);
-}
-// useQuery hook end
+import { WithQuery } from "./components/WithQuery";
 
 function App() {
   return (
@@ -31,14 +24,14 @@ function App() {
           <Route path="/about">
             <About />
           </Route>
-          <Route path="/WidthParam/:param">
-            <WidthParam />
+          <Route path="/WithParam/:param">
+            <WithParam />
           </Route>
-          <Route path="/WidthParams/:param1/:param2">
-            <WidthParams />
+          <Route path="/WithParams/:param1/:param2">
+            <WithParams />
           </Route>
-          <Route exact path="/WidthQuery">
-            <WidthQuery />
+          <Route exact path="/WithQuery">
+            <WithQuery />
           </Route>
         </Switch>
       </Router>
@@ -47,24 +40,3 @@ function App() {
 }
 
 export default App;
-
-const WidthQuery = () => {
-  const [state, setState] = useState({});
-  let query = useQuery();
-
-  useEffect(() => {
-    setState({
-      name: query.get("name"),
-      age: query.get("age"),
-    });
-  }, [query]);
-
-  return (
-    <>
-      <h2>WidthQuery</h2>
-      <pre>{JSON.stringify(state, null, 2)}</pre>
-      <h2>name: {state.name}</h2>
-      <h2>age: {state.age}</h2>
-    </>
-  );
-};
