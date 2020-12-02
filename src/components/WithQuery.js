@@ -14,7 +14,7 @@ export const WithQuery = () => {
 
   return (
     <>
-      <h2>WithPQuery</h2>
+      <h2>WithQuery</h2>
       <pre>{JSON.stringify(state, null, 2)}</pre>
       <h2>name: {state.name}</h2>
       <h2>age: {state.age}</h2>
