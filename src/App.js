@@ -4,7 +4,7 @@ import {
   BrowserRouter as Router,
   Switch,
   Route,
-  useLocation,
+  // useLocation,
 } from "react-router-dom";
 import { Home } from "./components/Home";
 import { About } from "./components/About";
@@ -50,11 +50,11 @@ export default App;
 
 const WidthQuery = () => {
   const [state, setState] = useState([]);
-  let location = useLocation();
+  // let location = useLocation();
 
   useEffect(() => {
-    setState(location);
-  }, [location]);
+    setState(window.location.search);
+  }, []);
 
   // let query = useQuery();
 
@@ -62,8 +62,8 @@ const WidthQuery = () => {
     <>
       <h2>WidthQuery</h2>
       <pre>{JSON.stringify(state, null, 2)}</pre>
-      {/* <h2>{query.get("name")}</h2>
-      <h2>{query.get("age")}</h2> */}
+      <h2>{state.name}</h2>
+      <h2>{state.age}</h2>
     </>
   );
 };
