@@ -15,13 +15,13 @@ const Form = () => {
     }));
   };
 
-  const checkAllValues = (AllInputValues) => {
-    const arrayOfValues = Object.values(AllInputValues);
+  const checkAllValues = (arrayOfValues) => {
     return arrayOfValues.length > 0;
   };
 
   useEffect(() => {
-    const disabledBoolean = checkAllValues(AllInputValues);
+    const arrayOfValues = Object.values(AllInputValues);
+    const disabledBoolean = checkAllValues(arrayOfValues);
     setAllInputCheck(disabledBoolean);
   }, [AllInputValues]);
 
