@@ -2,7 +2,11 @@ import React, { useState, useEffect } from "react";
 
 const Form = () => {
   const [AllInputCheck, setAllInputCheck] = useState(false);
-  const [AllInputValues, setAllInputValues] = useState({});
+  const [AllInputValues, setAllInputValues] = useState({
+    email: false,
+    password: false,
+    text: false,
+  });
 
   const handleInputChange = (event) => {
     setAllInputValues((prevProps) => ({
