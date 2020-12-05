@@ -21,7 +21,7 @@ const Form = () => {
 
   useEffect(() => {
     const arrayOfValues = Object.values(AllInputValues);
-    const disabledBoolean = checkAllValues(arrayOfValues);
+    const disabledBoolean = arrayOfValues.every(checkAllValues);
     setAllInputCheck(disabledBoolean);
   }, [AllInputValues]);
 
