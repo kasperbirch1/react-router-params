@@ -3,9 +3,9 @@ import React, { useState, useEffect } from "react";
 const Form = () => {
   const [AllInputCheck, setAllInputCheck] = useState(false);
   const [AllInputValues, setAllInputValues] = useState({
-    email: false,
-    password: false,
-    text: false,
+    email: "",
+    password: "",
+    text: "",
   });
 
   const handleInputChange = (event) => {
@@ -21,7 +21,8 @@ const Form = () => {
   };
 
   useEffect(() => {
-    checkAllValues(AllInputValues);
+    const disabledBoolean = checkAllValues(AllInputValues);
+    setAllInputCheck(disabledBoolean);
   }, [AllInputValues]);
 
   const handleSubmit = (event) => {
