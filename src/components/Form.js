@@ -13,11 +13,7 @@ const Form = () => {
 
   const checkAllValues = (AllInputValues) => {
     const arrayOfValues = Object.values(AllInputValues);
-    let checker = (arr) => arr.every((v) => v === true);
-    checker(arrayOfValues);
-
-    console.log("checker", checker);
-    // setAllInputCheck(checker);
+    return arrayOfValues.length > 0;
   };
 
   useEffect(() => {
