@@ -10,7 +10,7 @@ export const WithQuery = () => {
       name: query.get("name"),
       age: query.get("age"),
     });
-  }, [query]);
+  }, []);
 
   return (
     <>

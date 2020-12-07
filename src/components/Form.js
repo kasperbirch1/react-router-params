@@ -6,6 +6,7 @@ const Form = () => {
     email: false,
     password: false,
     text: false,
+    number: false,
   });
 
   const handleInputChange = (event) => {
@@ -37,7 +38,7 @@ const Form = () => {
       <form onSubmit={handleSubmit}>
         <div className="form-control">
           <label>Email</label>
-          <input type="text" name="email" onChange={handleInputChange} />
+          <input type="email" name="email" onChange={handleInputChange} />
         </div>
         <div className="form-control">
           <label>Password</label>
@@ -46,6 +47,10 @@ const Form = () => {
         <div className="form-control">
           <label>text</label>
           <input type="text" name="text" onChange={handleInputChange} />
+        </div>
+        <div className="form-control">
+          <label>number</label>
+          <input type="number" name="number" onChange={handleInputChange} />
         </div>
         <div className="form-control">
           <label></label>
