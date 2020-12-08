@@ -14,17 +14,7 @@ import { WithQuery } from "./components/WithQuery";
 import Form from "./components/Form";
 import ReactHookForm from "./components/ReactHookForm";
 
-import { useEffect } from "react";
-import { useStateValue } from "./StateProvider";
-
 function App() {
-  const [{ user }] = useStateValue();
-
-  // Set user to sessionStorage
-  useEffect(() => {
-    sessionStorage.setItem("user", user);
-  }, [user]);
-
   return (
     <div className="App">
       <Router>

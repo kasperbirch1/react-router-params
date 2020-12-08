@@ -6,6 +6,13 @@ const reducer = (state, action) => {
   console.log(action);
   switch (action.type) {
     case "SET_USER":
+      sessionStorage.setItem("user", JSON.stringify(action.user));
+      return {
+        ...state,
+        user: action.user,
+      };
+    case "REMOVE_USER":
+      sessionStorage.removeItem("user");
       return {
         ...state,
         user: action.user,

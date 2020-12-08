@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { useStateValue } from "../StateProvider";
 
 const UserLogin = () => {
@@ -12,7 +12,7 @@ const UserLogin = () => {
   };
   const Logout = () => {
     dispatch({
-      type: "SET_USER",
+      type: "REMOVE_USER",
       user: null,
     });
   };
