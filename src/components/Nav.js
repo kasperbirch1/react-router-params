@@ -2,10 +2,9 @@ import { Link } from "react-router-dom";
 import { useStateValue } from "../StateProvider";
 
 export const Nav = () => {
-  const [{ user }, dispatch] = useStateValue();
+  const [{ user }] = useStateValue();
   return (
     <ul>
-      <li>{user ? "bruger er login" : "ingen bruger"}</li>
       <li>
         <Link to="/">Home</Link>
       </li>
@@ -20,7 +19,7 @@ export const Nav = () => {
       </li>
       <li>
         <Link to="/WithQuery">WithQuery</Link>
-      </li>{" "}
+      </li>
       <li>
         <Link to="/WithQuery?name=kasper&age=29">WithQuery kasper 29 </Link>
       </li>
@@ -29,6 +28,11 @@ export const Nav = () => {
       </li>
       <li>
         <Link to="/ReactHookForm">ReactHookForm</Link>
+      </li>
+      <li>
+        <Link style={{ color: !user ? "green" : "red" }} to="/UserLogin">
+          {!user ? "Log In" : "Log Out"}
+        </Link>
       </li>
     </ul>
   );
